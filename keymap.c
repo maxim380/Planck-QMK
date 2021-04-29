@@ -19,10 +19,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                 KC_NO,    KC_NO,    KC_NO, KC_NO, KC_NO, KC_LSFT, KC_LCTL,  KC_1,     KC_2,  KC_3,    KC_MINS,        KC_NO, 
                                 KC_TRNS,  KC_LSFT,  KC_NO, KC_NO, KC_NO, KC_ENT,  KC_SPC,   KC_PPLS,  KC_0,  KC_PDOT, KC_KP_PLUS,     KC_PENT),
 
-	[_PROGRAMMING] = LAYOUT_ortho_4x12( KC_NO, KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,   KC_NO,  KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, 
-                                      KC_NO, KC_LCBR,  KC_RCBR,  KC_LPRN,  KC_RPRN,  KC_NO,   KC_NO,  KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, 
-                                      KC_NO, KC_LBRC,  KC_RBRC,  KC_LT,    KC_GT,    KC_NO,   KC_NO,  KC_NO,    KC_NO, KC_NO, KC_NO, KC_NO, 
-                                      KC_NO, KC_LEFT,  KC_UP,    KC_DOWN,  KC_RGHT,  KC_NO, KC_ENT,  KC_SPC, KC_TRNS,  KC_NO, KC_NO, KC_NO, KC_NO),
+	[_PROGRAMMING] = LAYOUT_ortho_4x12( KC_NO, KC_NO,    KC_NO,    KC_NO,    KC_NO,    KC_NO,   KC_NO,  KC_NO,    KC_NO,  KC_NO, KC_NO, KC_NO, 
+                                      KC_NO, KC_LCBR,  KC_RCBR,  KC_LPRN,  KC_RPRN,  KC_NO,   KC_NO,  KC_NO,    KC_NO,  KC_NO, KC_NO, KC_NO, 
+                                      KC_NO, KC_LBRC,  KC_RBRC,  KC_LT,    KC_GT,    KC_NO,   KC_NO,  KC_NO,    KC_NO,  KC_NO, KC_NO, KC_NO, 
+                                      KC_NO, KC_LEFT,  KC_UP,    KC_DOWN,  KC_RGHT,  KC_NO,   KC_ENT, KC_SPC,   KC_TRNS,KC_NO, KC_NO, KC_NO),
 
 	[_FUNCTIONS] = LAYOUT_ortho_4x12( KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,    KC_NO, KC_NO, KC_F1, KC_F2,   KC_F3,  KC_F4,  KC_NO, 
                                     KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,    KC_NO, KC_NO, KC_F5, KC_F6,   KC_F7,  KC_F8,  KC_NO, 
