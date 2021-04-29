@@ -6,7 +6,7 @@ enum planck_layers {
   _PROGRAMMING,
   _FUNCTIONS,
   _PC_CONTROL
-}
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_QWERTY] = LAYOUT_ortho_4x12(KC_Q,   KC_W,     KC_E,     KC_R,   KC_T,   KC_ESC,   KC_DEL,   KC_Y,   KC_U,     KC_I,     KC_O,     KC_P, 
