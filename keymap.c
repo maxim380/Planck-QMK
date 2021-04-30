@@ -43,3 +43,38 @@ void keyboard_post_init_user(void) {
   rgblight_mode_noeeprom(RGBLIGHT_MODE_STATIC_LIGHT);
 }
 #endif
+
+void matrix_init_user(void) {
+  rgblight_enable();
+}
+
+void matrix_scan_user(void) {
+  #ifdef RGBLIGHT_ENABLE
+
+  static uint8_t old_layer = 255;
+  uint8_t new_layer = biton32(layer_state);
+
+  if (old_layer != new_layer) {
+    switch (new_layer) {
+      case _QWERTY:
+        rgblight_setrgb(RGB_GREEN);
+        break;
+      case _NUMPAD:
+        rgblight_setrgb(RGB_TEAL);
+        break;
+      case _PROGRAMMING:
+        rgblight_setrgb(RGB_RED);
+        break;
+      case _FUNCTIONS:
+        rgblight_setrgb(RGB_PURPLE);
+        break;
+      case _PC_CONTROL:
+        rgblight_setrgb(RGB_YELLOW);
+        break;
+    }
+
+    old_layer = new_layer;
+  }
+
+  #endif //RGBLIGHT_ENABLE
+}
