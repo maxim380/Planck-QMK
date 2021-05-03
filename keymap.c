@@ -16,8 +16,12 @@ enum planck_layers {
     _PC_CONTROL
 };
 
-enum {
-    TD_CTRL_CAPS
+enum tapdance {
+    TD_CTRL_CAPS,
+    TD_CURLY_BRACKETS,
+    TD_ROUND_BRACKETS,
+    TD_BOX_BRACKETS,
+    TD_ANGLE_BRACKETS
 };
 
 enum macros {
@@ -40,6 +44,10 @@ enum macros {
 qk_tap_dance_action_t tap_dance_actions[] = {
         // Tap once for Control, twice for Caps Lock
         [TD_CTRL_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_LCTL, KC_CAPS),
+        [TD_ANGLE_BRACKETS] = ACTION_TAP_DANCE_DOUBLE(S(KC_COMMA), S(KC_DOT)),
+        [TD_BOX_BRACKETS] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
+        [TD_CURLY_BRACKETS] = ACTION_TAP_DANCE_DOUBLE(S(KC_LBRC), S(KC_RBRC)),
+        [TD_ROUND_BRACKETS] = ACTION_TAP_DANCE_DOUBLE(S(KC_9), S(KC_0))
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
@@ -137,9 +145,9 @@ LAYOUT_ortho_4x12(
 [_PROGRAMMING] =
 LAYOUT_ortho_4x12(
         KC_NO, KC_NO, KC_NO, C(A(KC_L)), KC_EQUAL, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_NO, KC_LCBR, KC_RCBR, KC_LPRN, KC_RPRN, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_NO, KC_LBRC, KC_RBRC, KC_LT, KC_GT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
-        KC_NO, KC_LEFT, KC_UP, KC_DOWN, KC_RGHT, KC_NO, KC_ENT, KC_SPC, KC_TRNS, KC_NO, KC_NO, KC_NO
+        TD(TD_ANGLE_BRACKETS), TD(TD_BOX_BRACKETS), TD(TD_ROUND_BRACKETS), TD(TD_CURLY_BRACKETS), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+        KC_LEFT, KC_UP, KC_DOWN, KC_RGHT, KC_BSPC, KC_NO, KC_ENT, KC_SPC, KC_TRNS, KC_NO, KC_NO, KC_NO
 ),
 
 [_FUNCTIONS] =
