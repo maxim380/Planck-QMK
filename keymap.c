@@ -17,7 +17,7 @@ enum planck_layers {
 };
 
 enum tapdance {
-    TD_CTRL_CAPS,
+    TD_ESC_CAPS,
     TD_CURLY_BRACKETS,
     TD_ROUND_BRACKETS,
     TD_BOX_BRACKETS,
@@ -43,7 +43,7 @@ enum macros {
 
 qk_tap_dance_action_t tap_dance_actions[] = {
         // Tap once for Control, twice for Caps Lock
-        [TD_CTRL_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_LCTL, KC_CAPS),
+        [TD_ESC_CAPS] = ACTION_TAP_DANCE_DOUBLE(KC_ESC, KC_CAPS),
         [TD_ANGLE_BRACKETS] = ACTION_TAP_DANCE_DOUBLE(S(KC_COMMA), S(KC_DOT)),
         [TD_BOX_BRACKETS] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
         [TD_CURLY_BRACKETS] = ACTION_TAP_DANCE_DOUBLE(S(KC_LBRC), S(KC_RBRC)),
@@ -129,9 +129,9 @@ bool process_control_macro(uint16_t keycode, bool keyHeld) {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_QWERTY] =
 LAYOUT_ortho_4x12(
-        KC_Q, KC_W, KC_E, KC_R, KC_T, KC_ESC, KC_DEL, KC_Y, KC_U, KC_I, KC_O, KC_P,
+        KC_Q, KC_W, KC_E, KC_R, KC_T, TD(TD_ESC_CAPS), KC_DEL, KC_Y, KC_U, KC_I, KC_O, KC_P,
         KC_A, KC_S, KC_D, KC_F, KC_G, KC_TAB, KC_ENT, KC_H, KC_J, KC_K, KC_L, KC_SCLN,
-        KC_Z, KC_X, KC_C, KC_V, KC_B, KC_LSFT, TD(TD_CTRL_CAPS), KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH,
+        KC_Z, KC_X, KC_C, KC_V, KC_B, KC_LSFT, KC_LCTL, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH,
         MO(1),  KC_LGUI,  KC_LALT, MO(3), KC_BSPC, MO(4), MO(2), KC_SPC, KC_LEFT,  KC_UP, KC_DOWN,  KC_RGHT),
 
 [_NUMPAD] =
